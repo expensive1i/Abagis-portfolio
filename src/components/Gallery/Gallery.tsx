@@ -163,11 +163,11 @@ const Gallery: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Column - 2 Rows with 3 Images Each */}
-              <div className="grid grid-rows-2 gap-4">
-                {/* Top Row - 3 Images */}
-                <div className="grid grid-cols-3 gap-4">
-                  {galleryImages.slice(1, 4).map((image, index) => (
+              {/* Right Column - 3 Rows with 2 Images Each */}
+              <div className="grid grid-rows-3 gap-4">
+                {/* Top Row - 2 Images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {galleryImages.slice(1, 3).map((image, index) => (
                     <div
                       key={image.id}
                       className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -178,7 +178,7 @@ const Gallery: React.FC = () => {
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -193,20 +193,48 @@ const Gallery: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Bottom Row - 3 Images */}
-                <div className="grid grid-cols-3 gap-4">
-                  {galleryImages.slice(4, 7).map((image, index) => (
+                {/* Middle Row - 2 Images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {galleryImages.slice(3, 5).map((image, index) => (
                     <div
                       key={image.id}
                       className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                      style={{ transitionDelay: `${1.6 + (index * 0.1)}s` }}
+                      style={{ transitionDelay: `${1.5 + (index * 0.1)}s` }}
                       onClick={() => openModal(image.src)}
                     >
                       <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                          <div className="text-white">
+                            <p className="text-xs font-medium">{image.category}</p>
+                            <p className="text-xs opacity-90">Click to enlarge</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom Row - 2 Images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {galleryImages.slice(5, 7).map((image, index) => (
+                    <div
+                      key={image.id}
+                      className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                      style={{ transitionDelay: `${1.7 + (index * 0.1)}s` }}
+                      onClick={() => openModal(image.src)}
+                    >
+                      <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -227,9 +255,42 @@ const Gallery: React.FC = () => {
           {/* Gallery Slider */}
           <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.2s' }}>
             <div className="relative">
+              {/* Arrow Navigation */}
+              <div className="flex justify-between items-center mb-6">
+                <button
+                  onClick={() => {
+                    const container = document.querySelector('.gallery-scroll-container');
+                    if (container) {
+                      container.scrollBy({ left: -900, behavior: 'smooth' });
+                    }
+                  }}
+                  className="w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                <h3 className="text-lg font-semibold text-[#023F33]">Browse All Images</h3>
+                
+                <button
+                  onClick={() => {
+                    const container = document.querySelector('.gallery-scroll-container');
+                    if (container) {
+                      container.scrollBy({ left: 900, behavior: 'smooth' });
+                    }
+                  }}
+                  className="w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
               {/* Scrollable Container */}
               <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+                <div className="flex gap-6 pb-4 gallery-scroll-container" style={{ width: 'max-content' }}>
                   {galleryImages.map((image, index) => (
                     <div
                       key={image.id}
@@ -269,7 +330,7 @@ const Gallery: React.FC = () => {
               {/* Scroll Indicators */}
               <div className="flex justify-center mt-6 space-x-2">
                 <div className="text-sm text-gray-500">
-                  ← Scroll left and right to see more images →
+                  ← Use arrows above or scroll to navigate →
                 </div>
               </div>
             </div>
