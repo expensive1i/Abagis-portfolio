@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from './Footer/Footer'
+import { ScrollToTop } from '../common'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -12,6 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
