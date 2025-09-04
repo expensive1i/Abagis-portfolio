@@ -134,20 +134,14 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column - Image Slideshow - STATIC, NO SCROLL ANIMATION */}
-          <div className="relative order-2 xl:order-2 xl:col-span-4 w-full h-full">
-            {/* Slideshow Image Container - Extends beyond grid boundaries */}
+          <div className="relative order-2 xl:order-2 xl:col-span-4 w-full h-[300px] sm:h-[400px] lg:h-full flex justify-center xl:justify-start">
+            {/* Slideshow Image Container - Mobile full width and height, desktop extends beyond grid boundaries */}
             <div 
-              className="absolute top-0 left-0 w-full h-full"
-              style={{ 
-                transform: 'translateX(150px)',
-                width: '120%',
-                height: '140%',
-                top: '-20%'
-              }}
+              className="absolute w-full h-full xl:left-auto xl:right-0 -mx-16 lg:mx-0 xl:translate-x-[150px] xl:w-[120%] xl:h-[140%] xl:-top-[20%] -my-12 lg:my-0 xl:my-0 mt-8 lg:mt-0"
             >
               {/* Main Slideshow Image */}
               <div 
-                className={`w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-500 rounded-t-[12rem] ${
+                className={`w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-500 xl:rounded-t-[12rem] ${
                   isTransitioning ? 'opacity-0' : 'opacity-100'
                 }`}
                 style={{ 
@@ -156,10 +150,10 @@ const Hero: React.FC = () => {
               />
               
               {/* Gradient Overlay for blending */}
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#002C23]/30 rounded-t-[12rem]"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#002C23]/30 xl:rounded-t-[12rem]"></div>
               
               {/* Light overlay covering entire image */}
-              <div className="absolute inset-0 bg-[#002C23]/40 rounded-t-[12rem]"></div>
+              <div className="absolute inset-0 bg-[#002C23]/40 xl:rounded-t-[12rem]"></div>
             </div>
             
             {/* Professional Slideshow Indicators */}
