@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Navigation from '../layout/Navigation'
 
 const Hero: React.FC = () => {
@@ -37,6 +37,14 @@ const Hero: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleNextImage = useCallback(() => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      setIsTransitioning(false);
+    }, 300);
+  }, [images.length]);
+
   // Auto-advance slideshow every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,23 +52,7 @@ const Hero: React.FC = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentImageIndex]);
-
-  const handleNextImage = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-      setIsTransitioning(false);
-    }, 300);
-  };
-
-  const handlePrevImage = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-      setIsTransitioning(false);
-    }, 300);
-  };
+  }, [handleNextImage]);
 
   const goToImage = (index: number) => {
     if (index !== currentImageIndex) {
