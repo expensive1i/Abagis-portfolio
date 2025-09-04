@@ -24,20 +24,20 @@ const Lifestyle: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 ">
-      <div className="container mx-auto px-8 lg:px-12 pattern-bg">
+    <section ref={sectionRef} className="py-16 pattern-bg ">
+      <div className="container mx-auto px-8 lg:px-12 ">
         <div className="max-w-7xl mx-auto pattern-bg" >
           {/* Section Header */}
-          <div className={`text-left mb-12 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
-            <div className={`inline-flex items-center gap-3 mb-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '0.4s' }}>
-              <div className={`w-12 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.3s' }}></div>
-              <span className="text-[#FFE066] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Lifestyle</span>
-              <div className={`w-12 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.5s' }}></div>
+          <div className={`text-left mb-12 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.1s' }}>
+            <div className={`inline-flex items-center gap-3 mb-6 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '0.2s' }}>
+              <div className={`w-12 h-px bg-[#023F33] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.15s' }}></div>
+              <span className="text-[#023F33] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Lifestyle</span>
+              <div className={`w-12 h-px bg-[#023F33] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.25s' }}></div>
             </div>
-            <h2 className={`text-3xl lg:text-4xl xl:text-5xl font-bold text-[#023F33] mb-6 leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s', fontFamily: 'Space Grotesk, sans-serif' }}>
+            <h2 className={`text-3xl lg:text-4xl xl:text-5xl font-bold text-[#023F33] mb-6 leading-tight transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s', fontFamily: 'Space Grotesk, sans-serif' }}>
               Lifestyle, Values & Personal Leadership
             </h2>
-            <p className={`text-base lg:text-lg text-gray-600 max-w-4xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.0s' }}>
+            <p className={`text-base lg:text-lg text-gray-600 max-w-4xl transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s' }}>
               Lucy James Abagi fuses innovation with empathy. As a fundraiser extraordinaire, she's mobilized over $5 million for impactful programs, unlocking opportunities for up to 4 million rural lives across nine African countries through her bold creativity and execution.
             </p>
           </div>
@@ -46,22 +46,23 @@ const Lifestyle: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
             {/* Left Column - Portrait Image with Text Overlay (Takes 1/3 width) */}
-            <div className={`lg:col-span-1 relative overflow-hidden transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.0s' }}>
+            <div className={`lg:col-span-1 relative overflow-hidden transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s' }}>
               {/* Portrait Image */}
               <div 
-                className="w-full h-full min-h-[550px]"
+                className="w-full h-full min-h-[550px] rounded-3xl overflow-hidden shadow-lg"
                 style={{
                   backgroundImage: `url("/images/LucysGallery(21).jpg")`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center 20%',
-                  backgroundRepeat: 'no-repeat'
+                  backgroundRepeat: 'no-repeat',
+                  borderRadius: '24px'
                 }}
               >
                 {/* Subtle Overlay at Bottom for Text Visibility */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent h-48"></div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent h-48 rounded-b-3xl"></div>
                 
                 {/* Integrity in Innovation Text */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white rounded-b-3xl">
                   <h3 className="text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                     Integrity in Innovation
                   </h3>
@@ -79,7 +80,7 @@ const Lifestyle: React.FC = () => {
                 {/* Top Row - 2 Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Card 1: Fundraising & Impact */}
-                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.2s' }}>
+                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s' }}>
                     <div className="flex items-start gap-4 mb-3">
                       <div className="w-16 h-16 bg-[#023F33]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#023F33]">
@@ -96,7 +97,7 @@ const Lifestyle: React.FC = () => {
                   </div>
 
                   {/* Card 2: Mentorship */}
-                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.4s' }}>
+                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.7s' }}>
                     <div className="flex items-start gap-4 mb-3">
                       <div className="w-16 h-16 bg-[#023F33]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <svg className="w-8 h-8 text-[#023F33]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +117,7 @@ const Lifestyle: React.FC = () => {
                 {/* Bottom Row - 2 Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Card 3: Leadership Rooted in Purpose */}
-                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.6s' }}>
+                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
                     <div className="flex items-start gap-4 mb-3">
                       <div className="w-16 h-16 bg-[#023F33]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#023F33]">
@@ -133,7 +134,7 @@ const Lifestyle: React.FC = () => {
                   </div>
 
                   {/* Card 4: Women & Education */}
-                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.8s' }}>
+                  <div className={`group transition-all duration-500 transform hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.9s' }}>
                     <div className="flex items-start gap-4 mb-3">
                       <div className="w-16 h-16 bg-[#023F33]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <svg className="w-8 h-8 text-[#023F33]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +154,7 @@ const Lifestyle: React.FC = () => {
               </div>
 
               {/* Beyond the Boardroom Section - Closer to cards */}
-              <div className={`bg-white rounded-3xl p-6 mt-4 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.0s' }}>
+              <div className={`bg-white rounded-3xl p-6 mt-4 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.0s' }}>
                 <div className="text-left mb-6">
                   <h3 className="text-xl lg:text-2xl font-bold text-[#023F33] mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Beyond the Boardroom</h3>
                   <p className="text-base text-gray-600 mb-5">
@@ -163,7 +164,7 @@ const Lifestyle: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Interest 1 */}
-                  <div className={`flex items-center gap-3 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.2s' }}>
+                  <div className={`flex items-center gap-3 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.1s' }}>
                     <div className="w-6 h-6 bg-[#023F33] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -176,7 +177,7 @@ const Lifestyle: React.FC = () => {
                   </div>
 
                   {/* Interest 2 */}
-                  <div className={`flex items-center gap-3 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.4s' }}>
+                  <div className={`flex items-center gap-3 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.2s' }}>
                     <div className="w-6 h-6 bg-[#023F33] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -189,7 +190,7 @@ const Lifestyle: React.FC = () => {
                   </div>
 
                   {/* Interest 3 */}
-                  <div className={`flex items-center gap-3 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.6s' }}>
+                  <div className={`flex items-center gap-3 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.3s' }}>
                     <div className="w-6 h-6 bg-[#023F33] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -202,7 +203,7 @@ const Lifestyle: React.FC = () => {
                   </div>
 
                   {/* Interest 4 */}
-                  <div className={`flex items-center gap-3 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.8s' }}>
+                  <div className={`flex items-center gap-3 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.4s' }}>
                     <div className="w-6 h-6 bg-[#023F33] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

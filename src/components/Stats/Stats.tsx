@@ -24,7 +24,7 @@ const Stats: React.FC = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-12 bg-white pattern bg" style={{ fontFamily: '"Clash Display", sans-serif' }}>
+    <section ref={sectionRef} className="py-12 bg-white pattern-bg" style={{ fontFamily: '"Clash Display", sans-serif' }}>
       <div className="container mx-auto px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

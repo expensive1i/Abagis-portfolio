@@ -129,9 +129,9 @@ const Gallery: React.FC = () => {
           {/* Section Header */}
           <div className={`text-center mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
             <div className={`inline-flex items-center gap-3 mb-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '0.4s' }}>
-              <div className={`w-12 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.3s' }}></div>
-              <span className="text-[#FFE066] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Gallery</span>
-              <div className={`w-12 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.5s' }}></div>
+              <div className={`w-12 h-px bg-[#023F33] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.3s' }}></div>
+              <span className="text-[#023F33] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Gallery</span>
+              <div className={`w-12 h-px bg-[#023F33] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.5s' }}></div>
             </div>
             <h2 className={`text-2xl lg:text-3xl xl:text-4xl font-bold text-[#023F33] mb-6 leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s', fontFamily: 'Space Grotesk, sans-serif' }}>
               A Gallery of Professional Photos of Lucy James Abagi
@@ -161,37 +161,37 @@ const Gallery: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+          </div>
 
               {/* Right Column - 3 Rows with 2 Images Each */}
               <div className="grid grid-rows-3 gap-4">
                 {/* Top Row - 2 Images */}
                 <div className="grid grid-cols-2 gap-4">
                   {galleryImages.slice(1, 3).map((image, index) => (
-                    <div
-                      key={image.id}
-                      className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                        <div
+                          key={image.id}
+                          className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                       style={{ transitionDelay: `${1.3 + (index * 0.1)}s` }}
-                      onClick={() => openModal(image.src)}
-                    >
-                      <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
+                          onClick={() => openModal(image.src)}
+                        >
+                          <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
                           className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <div className="text-white">
-                            <p className="text-xs font-medium">{image.category}</p>
-                            <p className="text-xs opacity-90">Click to enlarge</p>
+                              <div className="text-white">
+                                <p className="text-xs font-medium">{image.category}</p>
+                                <p className="text-xs opacity-90">Click to enlarge</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                      ))}
+                  </div>
 
                 {/* Middle Row - 2 Images */}
                 <div className="grid grid-cols-2 gap-4">
@@ -224,107 +224,106 @@ const Gallery: React.FC = () => {
                 {/* Bottom Row - 2 Images */}
                 <div className="grid grid-cols-2 gap-4">
                   {galleryImages.slice(5, 7).map((image, index) => (
-                    <div
-                      key={image.id}
-                      className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                        <div
+                          key={image.id}
+                          className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                       style={{ transitionDelay: `${1.7 + (index * 0.1)}s` }}
-                      onClick={() => openModal(image.src)}
-                    >
-                      <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
+                          onClick={() => openModal(image.src)}
+                        >
+                          <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
                           className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div className="absolute bottom-0 left-0 right-0 p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <div className="text-white">
-                            <p className="text-xs font-medium">{image.category}</p>
-                            <p className="text-xs opacity-90">Click to enlarge</p>
+                              <div className="text-white">
+                                <p className="text-xs font-medium">{image.category}</p>
+                                <p className="text-xs opacity-90">Click to enlarge</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
+                      ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           {/* Gallery Slider */}
           <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.2s' }}>
             <div className="relative">
-              {/* Arrow Navigation */}
-              <div className="flex justify-between items-center mb-6">
+              {/* Scrollable Container with Overlay Arrows */}
+              <div className="relative">
+                <div className="overflow-x-auto scrollbar-hide gallery-scroll-container">
+                  <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+                    {galleryImages.map((image, index) => (
+                      <div
+                        key={image.id}
+                        className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl flex-shrink-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                        style={{ 
+                          transitionDelay: `${1.4 + (index * 0.1)}s`,
+                          width: '300px'
+                        }}
+                        onClick={() => openModal(image.src)}
+                      >
+                        <div className="relative overflow-hidden bg-white rounded-lg shadow-lg h-full">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className={`w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110`}
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <div className="text-white">
+                              <p className="text-xs font-medium">{image.category}</p>
+                              <p className="text-xs opacity-90">Click to enlarge</p>
+                            </div>
+                          </div>
+                          {/* See More text for the last image */}
+                          {index === galleryImages.length - 1 && (
+                            <div className="absolute top-4 right-4 bg-[#FFE066] text-[#023F33] px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                              See More
+                            </div>
+                          )}
+                        </div>
+                      </div>
+              ))}
+            </div>
+          </div>
+
+                {/* Left Arrow - Overlay on Images */}
                 <button
                   onClick={() => {
-                    const container = document.querySelector('.gallery-scroll-container');
-                    if (container) {
-                      container.scrollBy({ left: -900, behavior: 'smooth' });
+                    const scrollContainer = document.querySelector('.gallery-scroll-container');
+                    if (scrollContainer) {
+                      scrollContainer.scrollBy({ left: -900, behavior: 'smooth' });
                     }
                   }}
-                  className="w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl z-20"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                
-                <h3 className="text-lg font-semibold text-[#023F33]">Browse All Images</h3>
-                
+
+                {/* Right Arrow - Overlay on Images */}
                 <button
                   onClick={() => {
-                    const container = document.querySelector('.gallery-scroll-container');
-                    if (container) {
-                      container.scrollBy({ left: 900, behavior: 'smooth' });
+                    const scrollContainer = document.querySelector('.gallery-scroll-container');
+                    if (scrollContainer) {
+                      scrollContainer.scrollBy({ left: 900, behavior: 'smooth' });
                     }
                   }}
-                  className="w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#023F33] hover:bg-[#023F33]/90 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl z-20"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Scrollable Container */}
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-6 pb-4 gallery-scroll-container" style={{ width: 'max-content' }}>
-                  {galleryImages.map((image, index) => (
-                    <div
-                      key={image.id}
-                      className={`group cursor-pointer transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl flex-shrink-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                      style={{ 
-                        transitionDelay: `${1.4 + (index * 0.1)}s`,
-                        width: '300px'
-                      }}
-                      onClick={() => openModal(image.src)}
-                    >
-                      <div className="relative overflow-hidden bg-white rounded-lg shadow-lg h-full">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className={`w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110`}
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <div className="text-white">
-                            <p className="text-xs font-medium">{image.category}</p>
-                            <p className="text-xs opacity-90">Click to enlarge</p>
-                          </div>
-                        </div>
-                        {/* See More text for the last image */}
-                        {index === galleryImages.length - 1 && (
-                          <div className="absolute top-4 right-4 bg-[#FFE066] text-[#023F33] px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                            See More
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              </svg>
+            </button>
               </div>
               
               {/* Scroll Indicators */}
@@ -336,15 +335,6 @@ const Gallery: React.FC = () => {
             </div>
           </div>
 
-          {/* View More Button */}
-          <div className={`text-center mt-12 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.0s' }}>
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#023F33] text-white font-semibold rounded-lg hover:bg-[#023F33]/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-              <span>View Full Portfolio</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
 

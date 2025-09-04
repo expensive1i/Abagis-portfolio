@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-8 lg:px-12 h-full flex items-center pb-8 lg:pb-12 relative z-20">
         <div className="grid grid-cols-1 xl:grid-cols-8 gap-4 xl:gap-6 items-center max-w-7xl mx-auto w-full">
           {/* Left Column - Text Content with Dark Overlay - ANIMATED ON SCROLL */}
-          <div className="text-left order-1 xl:order-1 xl:col-span-4 w-full pt-12 lg:pt-16">
+          <div className="text-left order-1 xl:order-1 xl:col-span-4 w-full pt-8 lg:pt-12">
             {/* Greeting */}
             <div className={`mb-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
               <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
 
             {/* Main heading with creative styling */}
             <div className={`mb-8 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-tight">
+              <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black leading-tight">
                 <span className={`whitespace-nowrap transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ color: '#FFDE59', transitionDelay: '0.6s', fontFamily: 'Space Grotesk, sans-serif' }}>Lucy James Abagi</span>
                 <span className={`block text-2xl lg:text-3xl xl:text-3xl font-light text-white/70 mt-3 tracking-wider whitespace-nowrap transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '0.8s', fontFamily: 'Space Grotesk, sans-serif' }}>
                   Chief Executive Officer
@@ -116,15 +116,15 @@ const Hero: React.FC = () => {
 
             {/* Storytelling Headline */}
             <div className={`mb-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.0s' }}>
-              <h2 className="text-2xl lg:text-2xl xl:text-3xl font-bold text-white leading-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h2 className="text-2xl lg:text-2xl xl:text-3xl font-medium text-white leading-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 Empowering Citizens, Driving Change, Shaping Africa's Future
               </h2>
             </div>
             
             {/* Storytelling Body Text - Single paragraph for balance */}
             <div className={`mb-8 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.2s' }}>
-              <p className="text-white/70 text-l leading-relaxed">
-                Lucy James Abagi is a visionary leader dedicated to promoting transparency, accountability, and innovation across Africa. As CEO of PPDC, she has spearheaded initiatives that empower communities, amplify citizen voices, and transform governance systems.
+              <p className="text-white/70 text-l leading-relaxed max-w-2xl text-justify">
+              Lucy James Abagi is a visionary leader advancing transparency, accountability, and innovation across Africa. As CEO of the Public and Private Development Centre (PPDC), she champions initiatives that amplify citizen voices, strengthen communities, and transform governance into a system where inclusion and justice thrive.
               </p>
             </div>
             
@@ -132,11 +132,11 @@ const Hero: React.FC = () => {
             <div className={`mb-8 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.4s' }}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <button className={`bg-white hover:bg-gray-50 font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-base hover:shadow-2xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.6s' }}>
-                   <span style={{ color: '#023F33' }}>Discover Her Work</span>
+                   <span style={{ color: '#023F33' }}>Get In Touch</span>
                  </button>
-                <button className={`border-2 border-white/30 hover:border-white text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white/10 text-base transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.8s' }}>
+                <a href="#about" className={`border-2 border-white/30 hover:border-white text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white/10 text-base transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.8s' }}>
                    Explore Her Journey
-                 </button>
+                 </a>
               </div>
             </div>
           </div>
@@ -172,19 +172,19 @@ const Hero: React.FC = () => {
             
             {/* Professional Slideshow Indicators */}
             <div 
-              className="absolute bottom-8 left-1/2 z-30 flex flex-col items-center gap-6"
+              className="absolute bottom-4 left-1/2 z-30 flex items-center gap-3"
               style={{ transform: 'translateX(-50%)' }}
             >
-              {/* Elegant Dot Indicators */}
+              {/* Elegant Horizontal Line Indicators */}
               <div className="flex gap-3">
                 {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => goToImage(index)}
-                    className={`w-4 h-4 rounded-full transition-all duration-500 hover:scale-125 ${
+                    className={`w-8 h-1 rounded-full transition-all duration-500 hover:scale-110 ${
                       index === currentImageIndex 
-                        ? 'bg-[#FFDE59] shadow-lg shadow-[#FFDE59]/50' 
-                        : 'bg-white/30 hover:bg-white/50 border border-white/20'
+                        ? 'bg-white shadow-lg shadow-white/50' 
+                        : 'bg-white/30 hover:bg-white/50'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
