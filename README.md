@@ -149,7 +149,7 @@ src/
    npm run dev
    # or
    yarn dev
-   ```
+   ```   
 
 4. **Open your browser**
    Navigate to `http://localhost:5173` to view the application
