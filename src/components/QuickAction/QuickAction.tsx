@@ -23,8 +23,8 @@ const QuickAction: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="py-16">
-      <div className="max-w-7xl mx-auto px-6 ">
-        <div className={`bg-gray-100 p-12 text-center  text-white transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }} >
+      <div>
+        <div className={`bg-gray-100 rounded-xl p-12 text-center  text-white transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }} >
           <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight text-[#023F33]" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
             Ready to Make a Difference?
           </h2>

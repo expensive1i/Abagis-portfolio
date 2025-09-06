@@ -24,7 +24,7 @@ const Lifestyle: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 pattern-bg ">
+    <section id="lifestyle" ref={sectionRef} className="py-16 pattern-bg ">
       <div className="container mx-auto px-8 lg:px-12 ">
         <div className="max-w-7xl mx-auto pattern-bg" >
           {/* Section Header */}
@@ -34,7 +34,7 @@ const Lifestyle: React.FC = () => {
               <span className="text-[#023F33] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Lifestyle</span>
               <div className={`w-12 h-px bg-[#023F33] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.25s' }}></div>
             </div>
-            <h2 className={`text-3xl lg:text-4xl xl:text-5xl font-bold text-[#023F33] mb-6 leading-tight transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s', fontFamily: 'Space Grotesk, sans-serif' }}>
+            <h2 className={`text-2xl lg:text-3xl xl:text-4xl font-bold text-[#023F33] mb-6 leading-tight transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s', fontFamily: 'Space Grotesk, sans-serif' }}>
               Lifestyle, Values & Personal Leadership
             </h2>
             <p className={`text-base lg:text-lg text-gray-600 max-w-4xl transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s' }}>

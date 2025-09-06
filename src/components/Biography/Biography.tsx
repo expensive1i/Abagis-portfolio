@@ -24,7 +24,7 @@ const Biography: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-6 bg-white relative" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <section id="biography" ref={sectionRef} className="py-6 bg-white relative" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {/* Background Image - Full Width */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -43,12 +43,17 @@ const Biography: React.FC = () => {
       <div className="container mx-auto px-8 lg:px-12 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className={`text-center mb-4 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
-            <div className={`inline-flex items-center gap-3 mb-1 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '0.4s' }}>
-              <div className={`w-6 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.3s' }}></div>
-              <span className="text-[#FFE066] font-semibold tracking-widest uppercase text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Biography</span>
-              <div className={`w-6 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.5s' }}></div>
+          <div className={`text-center mb-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
+            <div className={`inline-flex items-center gap-4 mb-3 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '0.4s' }}>
+              <div className={`w-8 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.3s' }}></div>
+              <span className="text-[#FFE066] font-bold tracking-widest uppercase text-xl" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Biography</span>
+              <div className={`w-8 h-px bg-[#FFE066] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.5s' }}></div>
             </div>
+            
+            {/* Subtitle */}
+            <p className={`text-white/80 text-base font-normal leading-relaxed max-w-2xl mx-auto transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.6s', fontFamily: 'Poppins, sans-serif' }}>
+              A comprehensive overview of her leadership journey, groundbreaking achievements, and transformative contributions to transparency, civic technology, and justice reform in Nigeria.
+            </p>
           </div>
 
           {/* Content Grid */}
@@ -58,10 +63,13 @@ const Biography: React.FC = () => {
               {/* Left Column - Text Content */}
               <div className="space-y-4 text-white h-full">
                 <div className="space-y-3">
-                  <h2 className={`text-2xl lg:text-3xl xl:text-4xl font-medium leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '0.6s' }}>
-                    Leadership in Transparency & Civic-Tech Innovation
-                    <div className={`w-16 h-1 bg-[#023F33] mt-4 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.8s' }}></div>
-                  </h2>
+                  <div className="relative">
+                    <h2 className={`text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '0.6s' }}>
+                      Leadership in Transparency & Civic-Tech Innovation
+                    </h2>
+                    <div className={`w-20 h-1 bg-gradient-to-r from-[#FFE066] to-[#FFD700] mt-3 rounded-full transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '0.8s' }}></div>
+                    <div className={`absolute -top-2 -left-2 w-4 h-4 bg-[#FFE066] rounded-full opacity-60 transition-all duration-1000 ease-out ${isVisible ? 'opacity-60 scale-100' : 'opacity-0 scale-0'}`} style={{ transitionDelay: '0.7s' }}></div>
+                  </div>
                   
                   <div className="space-y-3">
                     <p className={`text-base lg:text-lg leading-relaxed text-justify text-white/75 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.0s' }}>
@@ -81,9 +89,12 @@ const Biography: React.FC = () => {
               {/* Right Column - Access to Justice & Digital Reform */}
               <div className="space-y-4 text-white h-full">
                 <div className="space-y-3">
-                  <h3 className={`text-xl lg:text-2xl font-medium leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '1.6s' }}>
-                    Access to Justice & Digital Reform
-                  </h3>
+                  <div className="relative">
+                    <h3 className={`text-xl lg:text-2xl font-bold leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '1.6s' }}>
+                      Access to Justice & Digital Reform
+                    </h3>
+                    <div className={`w-16 h-0.5 bg-gradient-to-r from-[#FFE066] to-[#FFD700] mt-2 rounded-full transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '1.8s' }}></div>
+                  </div>
                   
                   <p className={`text-base lg:text-lg leading-relaxed text-justify text-white/75 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.8s' }}>
                     Beyond procurement, I have led efforts to digitize Nigeria's criminal justice system through the Court Administration and Case Management (CACM) initiative. With funding support from the U.S. Department of State, CACM has been deployed in states such as Nasarawa, Kaduna, Plateau, Ebonyi, and Oyo. It has resulted in the archiving of over 2,200 criminal case files, the digital upload of 902 cases, and the installation of virtual hearing facilities, reducing inmate transport delays and improving judicial efficiency and security.
@@ -91,9 +102,12 @@ const Biography: React.FC = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className={`text-xl lg:text-2xl font-medium leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '2.0s' }}>
-                    Recognition & Strategic Partnerships
-                  </h3>
+                  <div className="relative">
+                    <h3 className={`text-xl lg:text-2xl font-bold leading-tight transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ color: '#FFE066', fontFamily: 'Space Grotesk, sans-serif', transitionDelay: '2.0s' }}>
+                      Recognition & Strategic Partnerships
+                    </h3>
+                    <div className={`w-16 h-0.5 bg-gradient-to-r from-[#FFE066] to-[#FFD700] mt-2 rounded-full transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} style={{ transitionDelay: '2.2s' }}></div>
+                  </div>
                   
                   <p className={`text-base lg:text-lg leading-relaxed text-white/75 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '2.2s' }}>
                     In July 2025, I was named Procurement Transparency Advocate of the Year at the 7th African Procurement and Supply Chain Summit for my leadership in open contracting and citizen engagement. The Lawgistics Mentoring Community honoured PPDC with its Most Strategic Impact and Partnership Award, and individually recognized me as the Most Collaborative Leader in NGO for my emphasis on partnership, civic engagement, and technological innovation.

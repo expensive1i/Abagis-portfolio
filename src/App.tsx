@@ -5,8 +5,9 @@ import AboutInfo from './components/AboutInfo'
 import Biography from './components/Biography'
 import Message from './components/Message'
 import Lifestyle from './components/Lifestyle'
-import QuickAction from './components/QuickAction'
+import Portfolio from './components/Portfolio'
 import Gallery from './components/Gallery'
+import Blog from './components/Blog'
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
       <Biography />
       <Message />
       <Lifestyle />
-     
+      <Portfolio />
       <Gallery />
-      <QuickAction />
+      <Blog />
     </Layout>
   )
 }
