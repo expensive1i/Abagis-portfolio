@@ -4,6 +4,7 @@ import { useIntersectionObserver } from '../../hooks'
 import Navigation from '../layout/Navigation'
 import Footer from '../layout/Footer/Footer'
 import { blogPosts } from '../../data/blogData'
+import { SEO } from '../common'
 
 const BlogDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -69,6 +70,18 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen pattern-bg">
+      <SEO 
+        title={currentPost?.title || "Blog Post"}
+        description={currentPost?.excerpt || "Read the latest insights from Lucy James Abagi on social impact, justice reform, and advocacy."}
+        keywords={`${currentPost?.category}, social impact, justice reform, advocacy, Lucy James Abagi, blog`}
+        image={currentPost?.image}
+        url={`/blog/${id}`}
+        type="article"
+        author={currentPost?.author}
+        publishedTime={currentPost?.date}
+        section={currentPost?.category}
+        tags={[currentPost?.category || '', 'social impact', 'advocacy']}
+      />
       <Navigation />
       
       <main ref={sectionRef}>

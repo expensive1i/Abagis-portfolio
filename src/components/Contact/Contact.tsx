@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useIntersectionObserver } from '../../hooks'
 import Navigation from '../layout/Navigation'
 import Footer from '../layout/Footer/Footer'
+import { SEO } from '../common'
 
 const Contact: React.FC = () => {
   const { isVisible, ref: sectionRef } = useIntersectionObserver<HTMLElement>(0.2)
@@ -45,6 +46,13 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen pattern-bg">
+      <SEO 
+        title="Contact Lucy James Abagi"
+        description="Get in touch with Lucy James Abagi for collaborations, speaking engagements, or to discuss social impact and justice reform initiatives. Ready to connect and make a difference together."
+        keywords="contact Lucy James Abagi, social impact collaboration, justice reform consultation, advocacy partnership, speaking engagement, social justice consultation"
+        url="/contact"
+        type="website"
+      />
       <Navigation />
       
       <main ref={sectionRef}>
