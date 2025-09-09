@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 
 /**
  * Custom hook for intersection observer functionality
@@ -7,9 +8,9 @@ import { useState, useEffect, useRef } from 'react';
  * @param threshold - Intersection ratio threshold (0-1)
  * @returns Object with isVisible state and ref to attach to element
  */
-export const useIntersectionObserver = (threshold: number = 0.3) => {
+export const useIntersectionObserver = <T extends HTMLElement = HTMLElement>(threshold: number = 0.3) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<T>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,5 +27,5 @@ export const useIntersectionObserver = (threshold: number = 0.3) => {
     return () => observer.disconnect();
   }, [threshold]);
 
-  return { isVisible, ref };
+  return { isVisible, ref: ref as RefObject<T> };
 };

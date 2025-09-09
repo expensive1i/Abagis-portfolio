@@ -4,7 +4,7 @@ import Navigation from '../layout/Navigation'
 import { useIntersectionObserver } from '../../hooks'
 
 const Hero: React.FC = () => {
-  const { isVisible, ref: heroRef } = useIntersectionObserver(0.3);
+  const { isVisible, ref: heroRef } = useIntersectionObserver<HTMLDivElement>(0.3);
 
   // Slideshow images - add your image paths here
   const images = [

@@ -7,7 +7,7 @@ import { blogPosts } from '../../data/blogData'
 
 const BlogDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>()
-  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2)
+  const { isVisible, ref: sectionRef } = useIntersectionObserver<HTMLElement>(0.2)
   const [showShareMenu, setShowShareMenu] = useState(false)
 
   const currentPost = blogPosts.find(post => post.id === parseInt(id || '1'))

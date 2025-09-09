@@ -4,7 +4,7 @@ import Navigation from '../layout/Navigation'
 import Footer from '../layout/Footer/Footer'
 
 const Contact: React.FC = () => {
-  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2)
+  const { isVisible, ref: sectionRef } = useIntersectionObserver<HTMLElement>(0.2)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
