@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useIntersectionObserver } from '../../hooks'
 
 const QuickAction: React.FC = () => {
-  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver<HTMLElement>(0.2);
 
   return (
     <section ref={sectionRef} className="py-8 sm:py-12 lg:py-16">
@@ -14,9 +15,12 @@ const QuickAction: React.FC = () => {
           <p className="text-sm sm:text-base lg:text-lg text-[#023F33] mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
             Join me in empowering communities and transforming governance through innovation and transparency.
           </p>
-          <button className="border-2 border-[#023F33] text-[#023F33] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-[#023F33] hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto">
-            Get Started Today
-          </button>
+          <Link 
+            to="/contact" 
+            className="inline-block border-2 border-[#023F33] text-[#023F33] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-[#023F33] hover:text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center"
+          >
+            Connect with me now
+          </Link>
         </div>
       </div>
     </section>
