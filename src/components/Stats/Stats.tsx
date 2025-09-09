@@ -1,27 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { useIntersectionObserver } from '../../hooks'
 
 const Stats: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        } else {
-          setIsVisible(false)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.1)
 
   return (
     <section id="about" ref={sectionRef} className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12 bg-white pattern-bg" style={{ fontFamily: '"Clash Display", sans-serif' }}>

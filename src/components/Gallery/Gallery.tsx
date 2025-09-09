@@ -1,30 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { galleryImages } from '../../data/galleryData'
+import { useIntersectionObserver } from '../../hooks'
 
 const Gallery: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
   const [selectedImage, setSelectedImage] = useState<{src: string, description: string, category: string} | null>(null);
-
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
 
   const openModal = (image: {src: string, description: string, category: string}) => {

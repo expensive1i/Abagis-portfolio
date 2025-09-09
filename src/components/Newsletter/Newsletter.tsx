@@ -1,30 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
+import { useIntersectionObserver } from '../../hooks'
 
 const Newsletter: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

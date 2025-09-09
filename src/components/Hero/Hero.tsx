@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import Navigation from '../layout/Navigation'
+import { useIntersectionObserver } from '../../hooks'
 
 const Hero: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const heroRef = useRef<HTMLDivElement>(null);
+  const { isVisible, ref: heroRef } = useIntersectionObserver(0.3);
 
   // Slideshow images - add your image paths here
   const images = [
@@ -18,24 +19,6 @@ const Hero: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Scroll-triggered animations for left column only
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleNextImage = useCallback(() => {
     setIsTransitioning(true);
@@ -123,9 +106,9 @@ const Hero: React.FC = () => {
             {/* Call to Action Buttons */}
             <div className={`mb-6 md:mb-8 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.4s' }}>
               <div className="flex flex-row gap-4 md:gap-6">
-                <button className={`bg-white hover:bg-gray-50 font-semibold py-3 md:py-4 px-6 md:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm md:text-base hover:shadow-2xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.6s' }}>
+                <Link to="/contact" className={`bg-white hover:bg-gray-50 font-semibold py-3 md:py-4 px-6 md:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm md:text-base hover:shadow-2xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.6s' }}>
                    <span style={{ color: '#023F33' }}>Get In Touch</span>
-                 </button>
+                 </Link>
                 <a href="#about" className={`border-2 border-white/30 hover:border-white text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white/10 text-sm md:text-base transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ transitionDelay: '1.8s' }}>
                    Explore Her Journey
                  </a>

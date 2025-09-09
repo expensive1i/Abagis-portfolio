@@ -1,57 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useIntersectionObserver } from '../../hooks'
+import { blogPosts } from '../../data/blogData'
 
 const Blog: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Transforming Governance Through Digital Innovation",
-      excerpt: "Exploring how technology can bridge the gap between citizens and government, creating more transparent and accessible public services.",
-      date: "December 15, 2024",
-      category: "Governance",
-      readTime: "5 min read",
-      image: "/images/LucysGallery(29).jpg"
-    },
-    {
-      id: 2,
-      title: "The Future of Civic Engagement in Africa",
-      excerpt: "A deep dive into how digital platforms are revolutionizing citizen participation and democratic processes across the continent.",
-      date: "December 10, 2024",
-      category: "Civic Tech",
-      readTime: "7 min read",
-      image: "/images/LucysGallery(35).jpg"
-    },
-    {
-      id: 3,
-      title: "Building Inclusive Digital Solutions",
-      excerpt: "Lessons learned from developing technology solutions that serve all communities, regardless of their digital literacy levels.",
-      date: "December 5, 2024",
-      category: "Innovation",
-      readTime: "6 min read",
-      image: "/images/LucysGallery(42).jpg"
-    }
-  ];
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
 
   return (
     <section id="blog" ref={sectionRef} className="py-16 bg-white">
@@ -80,9 +33,10 @@ const Blog: React.FC = () => {
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {blogPosts.map((post, index) => (
-                  <article 
+                  <Link 
                     key={post.id} 
-                    className={`bg-gray-100 rounded-2xl transition-all duration-500 ease-out overflow-hidden group cursor-pointer ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                    to={`/blog/${post.id}`}
+                    className={`bg-gray-100 rounded-2xl transition-all duration-500 ease-out overflow-hidden group cursor-pointer block ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                     style={{ transitionDelay: `${1.2 + (index * 0.2)}s` }}
                   >
                     {/* Blog Image */}
@@ -120,14 +74,14 @@ const Blog: React.FC = () => {
                         {post.excerpt}
                       </p>
                       
-                      <button className="text-[#023F33] font-semibold hover:text-[#FFE066] transition-colors duration-300 flex items-center gap-1 group text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                      <span className="text-[#023F33] font-semibold hover:text-[#FFE066] transition-colors duration-300 flex items-center gap-1 group text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                         Read More
                         <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </button>
+                      </span>
                     </div>
-                  </article>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -141,7 +95,11 @@ const Blog: React.FC = () => {
                 
                 <div className="space-y-4">
                   {blogPosts.map((post) => (
-                    <div key={`sidebar-${post.id}`} className="flex gap-3 pb-4 border-b border-gray-200 last:border-b-0 last:pb-0">
+                    <Link 
+                      key={`sidebar-${post.id}`} 
+                      to={`/blog/${post.id}`}
+                      className="flex gap-3 pb-4 border-b border-gray-200 last:border-b-0 last:pb-0 hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200"
+                    >
                       <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                         <img 
                           src={post.image} 
@@ -150,7 +108,7 @@ const Blog: React.FC = () => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-[#023F33] leading-tight mb-1 hover:text-[#FFE066] transition-colors duration-300 cursor-pointer" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                        <h4 className="text-sm font-semibold text-[#023F33] leading-tight mb-1 hover:text-gray-600 transition-colors duration-300" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                           {post.title}
                         </h4>
                         <p className="text-xs text-gray-500 mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -160,7 +118,7 @@ const Blog: React.FC = () => {
                           {post.category}
                         </span>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
                 

@@ -1,25 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { useIntersectionObserver } from '../../hooks'
 
 const QuickAction: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
 
   return (
     <section ref={sectionRef} className="py-8 sm:py-12 lg:py-16">

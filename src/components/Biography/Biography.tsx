@@ -1,27 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { useIntersectionObserver } from '../../hooks'
 
 const Biography: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.2);
 
   return (
     <section id="biography" ref={sectionRef} className="py-8 sm:py-12 lg:py-16 bg-white relative" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -64,7 +45,7 @@ const Biography: React.FC = () => {
               <div className="space-y-4 sm:space-y-6 text-white h-full">
                 <div className="space-y-3 sm:space-y-4">
                   {/* Leadership Badge */}
-                  <div className={`inline-flex items-center gap-2 bg-[#FFE066] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s', fontFamily: 'Space Grotesk, sans-serif' }}>
+                  <div className={`inline-flex items-center gap-2 bg-[#FFF3CD] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s', fontFamily: 'Space Grotesk, sans-serif' }}>
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -97,7 +78,7 @@ const Biography: React.FC = () => {
               <div className="space-y-4 sm:space-y-6 text-white h-full">
                 <div className="space-y-3 sm:space-y-4">
                   {/* Justice & Reform Badge */}
-                  <div className={`inline-flex items-center gap-2 bg-[#FFE066] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.5s', fontFamily: 'Space Grotesk, sans-serif' }}>
+                  <div className={`inline-flex items-center gap-2 bg-[#FFF3CD] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.5s', fontFamily: 'Space Grotesk, sans-serif' }}>
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -118,7 +99,7 @@ const Biography: React.FC = () => {
 
                 <div className="space-y-3 sm:space-y-4">
                   {/* Recognition & Partnerships Badge */}
-                  <div className={`inline-flex items-center gap-2 bg-[#FFE066] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.9s', fontFamily: 'Space Grotesk, sans-serif' }}>
+                  <div className={`inline-flex items-center gap-2 bg-[#FFF3CD] text-[#023F33] px-3 py-1 rounded-full text-xs font-semibold transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1.9s', fontFamily: 'Space Grotesk, sans-serif' }}>
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>

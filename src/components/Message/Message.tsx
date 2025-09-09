@@ -1,27 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { useIntersectionObserver } from '../../hooks';
 
 const Message: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver(0.3);
 
   return (
     <section id="message" ref={sectionRef} className="py-8 md:py-16 px-4">
@@ -29,7 +10,7 @@ const Message: React.FC = () => {
         {/* Single Green Card - Combined Content */}
         <div className={`bg-[#023F33] p-4 md:p-6 relative z-10 mt-8 md:mt-16 border-4 border-white/20 rounded-2xl md:rounded-3xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
           <div className="text-white max-w-2xl text-justify">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 leading-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 leading-tight" style={{ fontFamily: 'Space Grotesk, sans-serif', color: '#FFF3CD' }}>
             A Message from Lucy James Abagi, CEO of the Public and Private Development Centre (PPDC)
             </h2>
             
