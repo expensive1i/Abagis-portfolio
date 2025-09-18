@@ -209,71 +209,71 @@ const Mentorship: React.FC = () => {
                     <label className="block text-sm font-semibold text-[#023F33] mb-3" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                       Mentorship Focus Area *
                     </label>
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'leadership' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'leadership'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
                         }`}
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
-                        Leadership Development
+                        Leadership
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'governance' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'governance'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
                         }`}
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
-                        Governance & Transparency
+                        Governance
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'civic-tech' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'civic-tech'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
                         }`}
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
-                        Civic Technology
+                        Civic Tech
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'social-impact' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'social-impact'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
                         }`}
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
-                        Social Impact Strategy
+                        Social Impact
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'fundraising' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'fundraising'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
                         }`}
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
-                        Fundraising & Partnerships
+                        Fundraising
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'womens-leadership' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'womens-leadership'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
@@ -285,7 +285,7 @@ const Mentorship: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, mentorshipType: 'other' }))}
-                        className={`px-2 py-2 text-xs font-medium rounded-full border-2 transition-all duration-300 whitespace-nowrap ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-medium rounded-full border transition-all duration-300 whitespace-nowrap ${
                           formData.mentorshipType === 'other'
                             ? 'bg-[#FFDE59] border-[#FFDE59] text-[#023F33]'
                             : 'bg-transparent border-gray-300 text-gray-700 hover:border-[#FFDE59] hover:text-[#023F33]'
