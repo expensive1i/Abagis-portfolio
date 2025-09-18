@@ -66,6 +66,9 @@ const Navigation: React.FC = () => {
                   <a href="#lifestyle" className="text-white/80 hover:text-[#FFDE59] transition-all duration-300 font-medium text-sm">
                     Lifestyle
                   </a>
+                  <a href="#mentorship" className="text-white/80 hover:text-[#FFDE59] transition-all duration-300 font-medium text-sm">
+                    Mentorship
+                  </a>
                   <a href="#portfolio" className="text-white/80 hover:text-[#FFDE59] transition-all duration-300 font-medium text-sm">
                     Portfolio
                   </a>
@@ -200,6 +203,16 @@ const Navigation: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                       </svg>
                       Lifestyle
+                    </a>
+                    <a 
+                      href="#mentorship" 
+                      className="flex items-center text-white/90 hover:text-[#FFDE59] transition-all duration-300 font-medium text-base py-3 px-4 rounded-lg hover:bg-white/10"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                      </svg>
+                      Mentorship
                     </a>
                     <a 
                       href="#portfolio" 

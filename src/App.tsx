@@ -6,6 +6,7 @@ import AboutInfo from './components/AboutInfo'
 import Biography from './components/Biography'
 import Message from './components/Message'
 import Lifestyle from './components/Lifestyle'
+import Mentorship from './components/Mentorship'
 import Portfolio from './components/Portfolio'
 import Gallery from './components/Gallery'
 import Blog from './components/Blog'
@@ -24,6 +25,7 @@ function App() {
           <Biography />
           <Message />
           <Lifestyle />
+          <Mentorship />
           <Portfolio />
           <Gallery />
           <Blog />
